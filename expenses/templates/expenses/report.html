@@ -1,0 +1,55 @@
+<!-- expenses/templates/expenses/report.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5>Monthly Income vs Expenses</h5>
+    </div>
+    <div class="card-body">
+        <canvas id="monthlyChart"></canvas>
+    </div>
+</div>
+
+<script>
+    // Monthly Chart
+    const months = {{ months|safe }};
+    const expenseData = {{ expense_data|safe }};
+    const incomeData = {{ income_data|safe }};
+    
+    const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+    new Chart(monthlyCtx, {
+        type: 'bar',
+        data: {
+            labels: months,
+            datasets: [
+                {
+                    label: 'Income',
+                    data: incomeData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Expenses',
+                    data: expenseData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

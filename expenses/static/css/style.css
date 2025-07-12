@@ -1,0 +1,153 @@
+/* Improved Base Styles */
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: none;
+    transition: transform 0.2s;
+    margin-bottom: 24px;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+    padding: 16px 20px;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+/* Dashboard Summary Cards */
+.card.bg-primary {
+    background-color: #4e73df !important;
+    border-left: 4px solid #2e59d9;
+}
+
+.card.bg-danger {
+    background-color: #e74a3b !important;
+    border-left: 4px solid #be2617;
+}
+
+.card.bg-success {
+    background-color: #1cc88a !important;
+    border-left: 4px solid #17a673;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #4e73df !important;
+}
+
+.navbar-brand, .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+/* Recent Transactions */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 12px 16px;
+    border-color: #eaeef5;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f8fafc;
+}
+
+.badge {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #3a5fcd;
+    border-color: #3a5fcd;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 16px;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Add Transaction Page Styles */
+#transactionForm .btn-group {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#transactionForm .btn-outline-danger.active {
+    background-color: #e74a3b;
+    color: white;
+}
+
+#transactionForm .btn-outline-success.active {
+    background-color: #1cc88a;
+    color: white;
+}
+
+#transactionForm .form-control {
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+#transactionForm .select2-container--bootstrap-5 {
+    width: 100% !important;
+}
+
+/* Date picker icon */
+#id_date::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
+    padding-left: 10px;
+}
